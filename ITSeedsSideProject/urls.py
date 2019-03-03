@@ -13,11 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib import admin
+from django.urls import path
 from django.conf.urls import url
 from ITSeedsSideProject.StartPage.views import current_datetime
 
+
 urlpatterns = [
-    url(r'^current_time$', current_datetime, name = 'current_datetime'),
+    path('admin/', admin.site.urls),
 ]
+
+urlpatterns = [
+    path('', current_datetime, name='current_datetime'),
+]
+
+# urlpatterns = [
+#     url(r'^current_time$', current_datetime, name='current_datetime'),
+# ]
 
 
