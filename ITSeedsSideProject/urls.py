@@ -16,15 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from ITSeedsSideProject.StartPage.views import current_datetime
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-
-urlpatterns = [
-    path('', current_datetime, name='current_datetime'),
 ]
 
 # urlpatterns = [
