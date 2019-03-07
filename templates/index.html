@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!-- index.html -->
+{% extends "base.html" %}
+{% block title %} test {% endblock %}
+{% block content %}
 <div class="container">
 
     <form name="my form" action="/" method="get">
@@ -12,16 +9,16 @@
         <input id="userId" type="text" name="userId">
         <label for="userPassword">Password:</label>
         <input id="userPassword" type="text" name="userPassword">
+        <br/>
         <input type="submit" value="Login">
         <input type="reset" value="Reset">
     </form>
 
-    Your Id:{{ urid | default:"Please type your ID" }}<br/>
+    Your Id:{{ urid | default:" Please type your ID" }}<br/>
     {% if verified %}
         <em>Pass</em>
     {% else %}
         <em>Wrong Message</em>
     {% endif %}
 </div>
-</body>
-</html>
+{% endblock %}
