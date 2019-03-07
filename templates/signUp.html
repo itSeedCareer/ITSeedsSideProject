@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- signUp.html -->
 {% extends "base.html" %}
 {% block title %} test {% endblock %}
 {% block content %}
@@ -10,15 +10,24 @@
     <form name="my form" action="/" method="get">
         <label for="userId">ID:</label>
         <input id="userId" type="text" name="userId">
+        <br/>
         <label for="userPassword">Password:</label>
         <input id="userPassword" type="password" name="userPassword">
+        <br/>
+        <label for="userEmail">Email:</label>
+        <input id="userEmail" type="email" name="userEmail">
         <br/>
         <input type="submit" value="Login">
         <input type="reset" value="Reset">
         <input type="button" onclick="javacript:location.href='signup/'" value="Sign Up">
     </form>
 
-
+    Your Id:{{ urid | default:" Please type your ID" }}<br/>
+    {% if verified %}
+        <em>Pass</em>
+    {% else %}
+        <em>Wrong Message</em>
+    {% endif %}
 </div>
 <div class="row">
     <div class="col-md-12">

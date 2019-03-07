@@ -1,17 +1,18 @@
 from django.shortcuts import render
-from mysite import  models
+from mysite import models
 
 # Create your views here.
 
 def index(request):
     try:
-        urId = request.GET['userId']
-        urPassword = request.GET['userPassword']
+        urid = request.GET['userId']
+        urpassword = request.GET['userPassword']
     except:
-        urId = None
+        urid = None
+        message = 'Something wrong!'
 
-    if urId != None and urPassword == '12345':
-        verified = True
-    else:
-        verified = False
+    if urid != None and urpassword == '12345':
+        account = models.Account.objects.create(account=urid, password=urpassword)
+        account.save()
+
     return render(request, 'index.html', locals())
