@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from mainsite.views import homepage, showpost
-from mysite.views import index
+from mysite.views import index, signUp
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('post/<slug:slug>', showpost),
+    path('signup/', signUp)
 ]
 
 # urlpatterns = [
