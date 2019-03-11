@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import Test
+from .models import Test,Account
 
 # Register your models here.
 class PostTest(admin.ModelAdmin):
     list_display = ('account', 'password')
 
+class AccountTest(admin.ModelAdmin):
+    list_display = ('account', 'password', 'passwordConfirmation', 'email')
+
 admin.site.register(Test, PostTest)
+admin.site.register(Account, AccountTest)

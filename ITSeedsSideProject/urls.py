@@ -22,12 +22,9 @@ from mysite.views import index, signUp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('post/<slug:slug>', showpost),
-    path('signup/', signUp)
+    path('signup/', signUp),
+    # path('account/', include('registration.backends.default.urls')),
 ]
 
-# urlpatterns = [
-#     url(r'^current_time$', current_datetime, name='current_datetime'),
-# ]
 
 

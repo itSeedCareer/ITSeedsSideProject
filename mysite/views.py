@@ -19,14 +19,22 @@ def index(request):
 
 def signUp(request):
     try:
-        urid = request.GET['userId']
-        urpassword = request.GET['userPassword']
+        yourid = request.GET['userId']
+        yourpassword = request.GET['userPassword']
+        urpasswordconfirm = request.GET['userPasswordConfirm']
+        uremail = request.GET['userEmail']
+        urage = request.GET['userAge']
+        urgender = request.GET['userGender']
+        ureducation = request.GET['userEducation']
+
     except:
-        urid = None
+        yourid = None
         message = 'Something wrong!'
 
-    if urid != None and urpassword == '12345':
-        account = models.Account.objects.create(account=urid, password=urpassword)
-        account.save()
+    if yourid != None:
+        accounts = models.Account.objects.create(account=yourid, password=yourpassword,
+                                                 passwordConfirmation=urpasswordconfirm, email=uremail,
+                                                 age=urage, gender=urgender,ducation=ureducation)
+        accounts.save()
 
-    return render(request, 'signUp.html', locals())
+    return render(request, 'signup.html', locals())

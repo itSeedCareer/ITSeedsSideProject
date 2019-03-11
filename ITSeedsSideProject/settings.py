@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['*',]
 
 # Application definition
 
+# ACCOUNT_ACTIVATION_DAYS = 7
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainsite',
     'mysite',
+    # 'registration',
 ]
 
 MIDDLEWARE = [
