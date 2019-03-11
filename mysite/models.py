@@ -16,7 +16,7 @@ class Account(models.Model):
     email = models.EmailField(max_length=20)
     age = models.PositiveSmallIntegerField()
     gender = models.CharField(max_length=10, null=False)
-    ducation = models.CharField(max_length=10, null=False)
+    education = models.CharField(max_length=10, null=False)
 
     def __str__(self):
         return self.account
