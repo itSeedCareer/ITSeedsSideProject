@@ -25,12 +25,10 @@ SECRET_KEY = '*0rft$l$&5=wo@@#advy8ltt!_vlzmsj@#zrvxxwqz6q-&p^97'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = []
 
 
 # Application definition
-
-# ACCOUNT_ACTIVATION_DAYS = 7
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mysite',
-    # 'registration',
 ]
 
 MIDDLEWARE = [
@@ -108,9 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'zh_Hant'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Taipei'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
