@@ -34,7 +34,7 @@ def signUp(request):
     if yourid != None and yourpassword == urpasswordconfirm:
         accounts = models.Account.objects.create(account=yourid, password=yourpassword,
                                                  passwordConfirmation=urpasswordconfirm, email=uremail,
-                                                 age=urage, gender=urgender, ducation=ureducation)
+                                                 age=urage, gender=urgender, education=ureducation)
         accounts.save()
 
     return render(request, 'signup.html', locals())
