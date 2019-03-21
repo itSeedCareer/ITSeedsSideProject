@@ -1,31 +1,39 @@
 from django.shortcuts import render
-from mysite import models
+from mysite import models, forms
+
 
 # Create your views here.
 
-def index(request):
+def login(request):
+    if request.method == 'POST':
+        login_form = forms.LoginForm(request.POST)
+        if login_form.is_valid():
+            username = request.POST['user_name']
+            userpassword = request.POST['user_password']
+            message = "Login Successfully !"
+        else:
+            message = "Not Success"
+
+    else:
+        login_form = forms.LoginForm()
+
     try:
-        urid = request.GET['userId']
-        urpassword = request.GET['userPassword']
+        if username: request.session['username'] = username
+        if userpassword: request.session['userpassword'] = userpassword
     except:
-        urid = None
-        message = 'Something wrong!'
+        pass
 
-    if urid != None:
-        account = models.Test.objects.create(account=urid, password=urpassword)
-        account.save()
-
-    return render(request, 'index.html', locals())
+    return render(request, 'login.html', locals())
 
 def signUp(request):
     try:
-        yourid = request.GET['userId']
-        yourpassword = request.GET['userPassword']
-        urpasswordconfirm = request.GET['userPasswordConfirm']
-        uremail = request.GET['userEmail']
-        urage = request.GET['userAge']
-        urgender = request.GET['userGender']
-        ureducation = request.GET['userEducation']
+        yourid = request.POST['userId']
+        yourpassword = request.POST['userPassword']
+        urpasswordconfirm = request.POST['userPasswordConfirm']
+        uremail = request.POST['userEmail']
+        urage = request.POST['userAge']
+        urgender = request.POST['userGender']
+        ureducation = request.POST['userEducation']
 
     except:
         yourid = None
@@ -38,3 +46,17 @@ def signUp(request):
         accounts.save()
 
     return render(request, 'signup.html', locals())
+
+def home(request):
+    return render(request, 'home.html', locals())
+
+def index(request):
+    if 'username' in request.session:
+        username = request.session['username']
+        userpassword = request.session['userpassword']
+
+    return render(request, 'home.html', locals())
+
+# def logout(request):
+#     request.session['username'] = None
+#     return redirect('/')

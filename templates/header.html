@@ -1,4 +1,18 @@
 <!-- header.html -->
-<div class="well">
-    <h1 style="font-family: Arial;">Investment Simulator</h1>
-</div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand" align=center>
+                    Investment Simulator
+                </div>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                {% if username %}
+                    <li><a href="/logout">Log Out</a></li>
+                {% else %}
+                    <li><a href="/login">Log In</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>

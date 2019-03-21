@@ -7,7 +7,8 @@
         <div class="alert alert-warning">{{ message }}</div>
     {% endif %}
 
-    <form name="myform" action="." method="get">
+    <form name="myform" action="." method="post">
+        {% csrf_token %}
 
         <label for="userId">ID:</label>
         <input id="userId" type="text" name="userId">
