@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lan="en" dir="ltr">
+
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+<title>infoBulliten</title>
+
+    <style>
+        .functionTab {
+          width: 200px;
+        }
+
+        .functionTab a {
+          background-color: #eee;
+          color: black;
+          display: block;
+          padding: 12px;
+          text-decoration: none;
+        }
+
+        .functionTab a:hover {
+          background-color: #ccc;
+        }
+
+        .functionTab a.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+    </style>
+
+    <style type="text/css">
+        #sitebody{
+        　width:600px;
+        　margin:0 auto;
+        　font-size:13px;
+        }
+        #header{
+        　background-color:#FFD4D4;
+        　height:80px;
+        　text-align:center;
+        　line-height:80px;
+        }
+        #sidebar_left{
+        　background-color:#FFECC9;
+        　width:120px;
+        　height:400px;
+        　text-align:center;
+        　line-height:400px;
+        　float:left;
+        }
+        #sidebar_right{
+        　background-color:#FFECC9;
+        　width:120px;
+        　height:400px;
+        　text-align:center;
+        　line-height:400px;
+        　float:right;
+        }
+        #content{
+        　margin-left:120px;
+        　margin-right:120px;
+        　height:400px;
+        　background-color:#F2FFF2;
+        　text-align:center;
+        　line-height:400px;
+        }
+        #footer{
+        　clear:both;
+        　background-color:#FFD4D4;
+        　height:80px;
+        　text-align:center;
+        　line-height:80px;
+        }
+    </style>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+    </style>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div id="sitebody">
+
+        <div id="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">資訊佈告欄</a>
+                    </div>
+
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">股價走勢</a></li>
+                      <li><a href="#">財務報表分析</a></li>
+                      <li><a href="#">指標分析</a></li>
+                      <li><a href="#">公司最新消息</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div id="sidebar_left">
+            <div class="functionTab">
+              <a href="#" class="active">主頁</a>
+              <a href="#">資訊一覽表</a>
+              <a href="#">查詢個股</a>
+              <a href="#">選擇股票</a>
+              <a href="#">模擬投資</a>
+              <a href="#">消息補給站</a>
+            </div>
+        </div>
+
+        <div id="sidebar_right">
+            <h2>股票追蹤</h2>
+
+            <table>
+              <tr>
+                <th>公司</th>
+                <th>成交價</th>
+                <th>漲跌</th>
+              </tr>
+              <tr>
+                <td>台積電(2330)</td>
+                <td>245.50</td>
+                <td>+3.50</td>
+              </tr>
+              <tr>
+                <td>聯發科(2454)</td>
+                <td>266.00</td>
+                <td>-1.34</td>
+              </tr>
+              <tr>
+                <td>大聯大(3702)</td>
+                <td>190.55</td>
+                <td>+4.52</td>
+              </tr>
+              <tr>
+                <td>中鼎工程(9933)</td>
+                <td>200.45</td>
+                <td>+2.34</td>
+              </tr>
+            </table>
+        </div>
+        <div id="content">content</div>
+        <div id="footer">footer</div>
+
+    </div>
+
+</body>
+</html>
