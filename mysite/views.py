@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from mysite import models, forms
 
 
@@ -57,6 +57,6 @@ def index(request):
 
     return render(request, 'home.html', locals())
 
-# def logout(request):
-#     request.session['username'] = None
-#     return redirect('/')
+def logout(request):
+    request.session['username'] = None
+    return redirect('/')
