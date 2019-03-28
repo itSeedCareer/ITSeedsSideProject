@@ -1,0 +1,5 @@
+Please check your information and click the following link to activate your account!
+
+User : {{ user }}
+Your Link : http://{{ site }}/accounts/activate/{{ activation_key }}
+will expire after {{ expiration_days }} days.

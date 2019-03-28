@@ -1,0 +1,29 @@
+<!-- index.html -->
+{% extends "mysite/base.html" %}
+{% block title %} test {% endblock %}
+{% block content %}
+<div class="container">
+    {% for message in messages%}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3>Thanks for register</h3>
+                <p>Please check your email!</p>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" align=center>
+                <h3>Work hard! Try hard!</h3>
+    </div>
+
+</div>
+{% endblock %}
