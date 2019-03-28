@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>buyStock</title>
+
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4" style="background-color: red">
+
+            <span class="label label-success">股票買入</span>
+
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">請輸入欲購買之股票代碼:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" placeholder="Enter stock ID">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">選擇數量：</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="pwd" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+
+          <div class="col-sm-8" style="background-color: green; display: flex">
+
+            <span class="label label-success">交易紀錄</span>
+            <div class="container">
+              <h2>交易紀錄</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>時間</th>
+                    <th>交易編號</th>
+                    <th>交易模式</th>
+                    <th>交易對象</th>
+                    <th>交易金額</th>
+                    <th>剩餘金額</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>11:30</td>
+                    <td>0001</td>
+                    <td>買入</td>
+                    <td>阿鴻</td>
+                    <td>100</td>
+                    <td>-100</td>
+                  </tr>
+                  <tr class="success">
+                    <td>11:30</td>
+                    <td>0001</td>
+                    <td>買入</td>
+                    <td>阿睿</td>
+                    <td>100</td>
+                    <td>-100</td>
+                  </tr>
+                  <tr class="danger">
+                    <td>11:30</td>
+                    <td>0001</td>
+                    <td>買入</td>
+                    <td>阿昕</td>
+                    <td>100</td>
+                    <td>-100</td>
+                  </tr>
+                  <tr class="info">
+                    <td>11:30</td>
+                    <td>0001</td>
+                    <td>買入</td>
+                    <td>阿禎</td>
+                    <td>100</td>
+                    <td>-100</td>
+                  </tr>
+                  <tr class="warning">
+                    <td>11:30</td>
+                    <td>0001</td>
+                    <td>買入</td>
+                    <td>阿維</td>
+                    <td>100</td>
+                    <td>-100</td>
+                  </tr>
+                  <tr class="active">
+                    <td>11:30</td>
+                    <td>0001</td>
+                    <td>買入</td>
+                    <td>大立光</td>
+                    <td>100</td>
+                    <td>-100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4" style="background-color: orange">
+              <span class="label label-success">股票賣出</span>
+              <form class="form-horizontal">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">請輸入欲賣出之股票代碼:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" placeholder="Enter stock ID">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">選擇數量：</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="pwd" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4" style="background-color: yellow">
+              <span class="label label-success">買賣交易</span>
+              <form class="form-horizontal">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">請選擇交易項目：</label>
+                <label class="radio-inline"><input type="radio" name="optradio" checked>現金</label>
+                <label class="radio-inline"><input type="radio" name="optradio">股票</label>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="email">請輸入欲交易對象之帳號：</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" placeholder="Enter ID">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">選擇數量：</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="pwd" placeholder="">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
