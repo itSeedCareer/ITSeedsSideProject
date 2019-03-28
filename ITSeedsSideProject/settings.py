@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*',]
 # ACCOUNT_ACTIVATION_DAYS = 7
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mysite',
-    'registration',
+
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 ACCOUNT_ACTIVATION_DAYS = 7
+
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = '351d0fc0a76ab7501df6ae2fd5653776-e51d0a44-4b8a1bc1'
+MAILGUN_SERVER_NAME = 'sandbox2b684441ce8d4196ab3bfceeaab37690.mailgun.org'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'stmp.gmail.com'
+EMAIL_HOST_USER = 'itseedcareer@gmail.com'
+EMAIL_HOST_PASSWORD = 'scottishandsome'
+EMAIL_POST = 587

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from mysite import models, forms
 from django.contrib.sessions.models import Session
-from service import mysiteService
+from django.core.mail import EmailMessage
 from django.contrib import messages
 
 

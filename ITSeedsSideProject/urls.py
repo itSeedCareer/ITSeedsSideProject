@@ -17,13 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from mysite.views import login, signup, home, index, userinfo
 
+from django.conf.urls import include, url
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login),
     path('signup/', signup),
     path('', index),
-    path('account/', include('registration.backends.default.urls')),
+    path('accounts/', include('registration.backends.default.urls')),
     path('userinfo/', userinfo)
 ]
 
