@@ -1,5 +1,5 @@
 <!-- signUp.html -->
-{% extends "base.html" %}
+{% extends "mysite/base.html" %}
 {% block title %} test {% endblock %}
 {% block content %}
 <div class="container">
@@ -7,7 +7,7 @@
         <div class="alert alert-warning">{{ message }}</div>
     {% endif %}
 
-    <form name="myform" action="." method="post">
+    <form name="myform" action=".." method="post">
         {% csrf_token %}
 
         <label for="userId">ID:</label>

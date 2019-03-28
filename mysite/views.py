@@ -1,31 +1,42 @@
 from django.shortcuts import render, redirect
 from mysite import models, forms
+from django.contrib.sessions.models import Session
+from service import mysiteService
 
 
 # Create your views here.
 
-def login(request):
+def login(request): # 登入函數
+
+    #mysiteService.mysite_login()
     if request.method == 'POST':
         login_form = forms.LoginForm(request.POST)
         if login_form.is_valid():
-            username = request.POST['user_name']
-            userpassword = request.POST['user_password']
-            message = "Login Successfully !"
+            login_name = request.POST['user_name'].strip()
+            login_password = request.POST['user_password']
+
+            try:
+                user = models.User.objects.get(name=login_name)
+                if user.password == login_password:
+                    request.session['username'] = user.name
+                    request.session['useremail'] = user.email
+                    message = "Login Successfully !"
+                    return redirect('/')
+                else:
+                    message = "Password wrong!"
+
+            except:
+                message = "User not find!"
+
         else:
-            message = "Not Success"
+            message = "Please check again!"
 
     else:
         login_form = forms.LoginForm()
 
-    try:
-        if username: request.session['username'] = username
-        if userpassword: request.session['userpassword'] = userpassword
-    except:
-        pass
+    return render(request, 'mysite/login.html', locals())
 
-    return render(request, 'login.html', locals())
-
-def signUp(request):
+def signup(request):
     try:
         yourid = request.POST['userId']
         yourpassword = request.POST['userPassword']
@@ -45,18 +56,32 @@ def signUp(request):
                                                  age=urage, gender=urgender, education=ureducation)
         accounts.save()
 
-    return render(request, 'signup.html', locals())
+    return render(request, 'mysite/signup.html', locals())
 
 def home(request):
-    return render(request, 'home.html', locals())
+    return render(request, 'mysite/home.html', locals())
 
-def index(request):
+def index(request, pid=None, del_pass=None): # 讀取session函數
+    if 'username' in request.session:
+        user_name = request.session['username']
+        user_email = request.session['useremail']
+
+    return render(request, 'mysite/home.html', locals())
+
+def logout(request): # 登出函數
+    if 'username' in request.session:
+        Session.objects.all().delete()
+        return redirect('/login/')
+    return redirect('/')
+
+def userinfo(request):
     if 'username' in request.session:
         username = request.session['username']
-        userpassword = request.session['userpassword']
+    else:
+        return redirect('/login/')
+    try:
+        userinfo = models.User.objects.get(name=username)
+    except:
+        pass
+    return render(request, 'mysite/userinfo.html', locals())
 
-    return render(request, 'home.html', locals())
-
-def logout(request):
-    request.session['username'] = None
-    return redirect('/')

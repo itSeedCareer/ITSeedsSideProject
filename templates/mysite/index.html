@@ -1,19 +1,24 @@
 <!-- index.html -->
-{% extends "base.html" %}
-{% block title %} Investment Simulator {% endblock %}
+{% extends "mysite/base.html" %}
+{% block title %} test {% endblock %}
 {% block content %}
 <div class="container">
     {% if message %}
         <div class="alert alert-warning">{{ message }}</div>
     {% endif %}
 
-    <form name="my form" action="." method="POST">
-        {% csrf_token %}
-            <table>
-                {{ login_form.as_table }}
-            </table>
-        <input type="submit" value="Log in"></br>
-    </form>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" align="center">
+                <h3>Investment Simulator</h3>
+        </div>
+    </div>
+</div>
+    {% if username and userpassword %}
+    user: {{ username }}
+    {% endif %}
+
 </div>
 <div class="row">
     <div class="col-md-12">
