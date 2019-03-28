@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mysite.views import login, signup, home, index
+from mysite.views import login, signup, home, index, userinfo
 
 
 urlpatterns = [
@@ -23,7 +23,8 @@ urlpatterns = [
     path('login/', login),
     path('signup/', signup),
     path('', index),
-    # path('account/', include('registration.backends.default.urls')),
+    path('account/', include('registration.backends.default.urls')),
+    path('userinfo/', userinfo)
 ]
 
 
