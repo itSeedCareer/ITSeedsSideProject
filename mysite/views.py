@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from mysite import models, forms
 from django.contrib.sessions.models import Session
 from service import mysiteService
+from django.contrib import messages
 
 
 # Create your views here.
@@ -20,16 +21,16 @@ def login(request): # 登入函數
                 if user.password == login_password:
                     request.session['username'] = user.name
                     request.session['useremail'] = user.email
-                    message = "Login Successfully !"
+                    messages.add_messag(request, messages.SUCCESS, "Success!")
                     return redirect('/')
                 else:
-                    message = "Password wrong!"
+                    messages.add_message(request, messages.WARNING, "Password wrong!")
 
             except:
-                message = "User not find!"
+                messages.add_message(request, messages.WARNING, "User not find!")
 
         else:
-            message = "Please check again!"
+            messages.add_message(request, messages.INFO, "Please check again!")
 
     else:
         login_form = forms.LoginForm()
