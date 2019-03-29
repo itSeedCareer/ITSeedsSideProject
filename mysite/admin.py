@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Test, Account, User
+from .models import Account, User
 
 # Register your models here.
 class PostTest(admin.ModelAdmin):
@@ -8,6 +8,6 @@ class PostTest(admin.ModelAdmin):
 class AccountTest(admin.ModelAdmin):
     list_display = ('account', 'password', 'passwordConfirmation', 'email')
 
-admin.site.register(Test, PostTest)
+#dmin.site.register(Test, PostTest)
 admin.site.register(Account, AccountTest)
 admin.site.register(User)

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from mysite import models, forms
+from mysite import models, forms, test_model
 from django.contrib.sessions.models import Session
 from django.core.mail import EmailMessage
 from django.contrib import messages
@@ -85,4 +85,20 @@ def userinfo(request):
     except:
         pass
     return render(request, 'mysite/userinfo.html', locals())
+
+def test(request):
+    my_id = 1234567
+    my_age = 99
+    my_name = 'scott'
+
+    test = models.Test.objects.create(id=my_id, age=my_age, name=my_name)
+
+    test.save()
+
+    return render(request, 'mysite/test.html', locals())
+
+def show(request):
+    my_info = models.Test.objects.get(my_id=id)
+
+    return render(request, 'mysite/show.html', locals())
 

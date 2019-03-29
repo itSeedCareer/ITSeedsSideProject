@@ -1,0 +1,24 @@
+<!-- index.html -->
+{% extends "mysite/base.html" %}
+{% block title %} Investment Simulator {% endblock %}
+{% block content %}
+<div class="container">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tag }}">{{ message }}</div>
+    {% endfor %}
+
+
+
+    Welcome {{ my_id }} !!
+
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading" align=center>
+                <h3>Work hard! Try hard!</h3>
+    </div>
+
+</div>
+{% endblock %}
