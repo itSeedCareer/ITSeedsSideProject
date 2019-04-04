@@ -64,8 +64,8 @@ def home(request):
 
 def index(request, pid=None, del_pass=None): # 讀取session函數
     if 'username' in request.session:
-        user_name = request.session['username']
-        user_email = request.session['useremail']
+        username = request.session['username']
+        useremail = request.session['useremail']
 
     return render(request, 'mysite/home.html', locals())
 
